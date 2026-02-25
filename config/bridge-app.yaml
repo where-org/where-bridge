@@ -1,0 +1,93 @@
+  #ts:
+  #app:
+    #module: '/Users/sasahara/Documents/devel/node/@where-org/module/bridge/where-bridge-app-typescript/src/index.ts'
+
+  #credential: {}
+
+#midi0:
+  #app:
+    #module: '@where-org/where-bridge-app-midi/socket'
+
+    #credential:
+      #port : 0
+      #url  : ws://localhost:5570/where/general/midi/p0
+      #style: osc # || midi
+      #hex  : false
+      #normarize: false
+
+#midi1:
+  #app:
+    #module: '@where-org/where-bridge-app-midi/socket'
+
+    #credential:
+      #port : 1
+      #url  : ws://localhost:5570/where/general/a/p0
+      #style: osc # || midi
+      #hex  : false
+      #normarize: false
+
+
+    #p1:
+      #port : 1
+      #url  : ws://localhost:5570/where/general/a/p1
+      #style: osc # || midi
+      #hex  : false
+      #normarize: true
+
+#mcp-http:
+  #app:
+    #module: '@where-org/where-bridge-app-mcp/http'
+
+    #meta:
+      #credential: example
+
+    #example:
+      #url: http://localhost:5570/where/ex/server
+      #readOnly: true
+      #port: 5600
+
+mcp-bridge:
+  app:
+    module: '@where-org/where-bridge-app-mcp/stdio'
+
+    meta:
+      credential: example
+
+    example:
+      url: http://localhost:5570/where/ex/server
+      readOnly: true
+
+#osc9000:
+  #app:
+    #module: '@where-org/where-bridge-app-osc/socket'
+
+    #meta:
+      #credential: example
+
+    #example:
+      #bind: 0.0.0.0
+      #port: 9000
+      #url : ws://localhost:5570/where/general/g/osc-server-9000
+      #style: osc
+      #type: emitter
+
+#osc9001:
+  #app:
+    #module: '@where-org/where-bridge-app-osc/socket'
+
+    #credential:
+      #bind: 0.0.0.0
+      #port: 9001
+      #url : ws://localhost:5570/where/general/a/osc-server-9001
+      #type: sender
+
+#osc9002:
+  #app:
+    #module: '@where-org/where-bridge-app-osc/server'
+
+    #credential:
+      #bind : 0.0.0.0
+      #port : 9002
+      #url  : http://localhost:5570/where/v2/osc-sender
+      #scope: send1
+      #type : sender
