@@ -1,6 +1,6 @@
 {
   "name": "@where-org/where-bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bridge to where-server / where-socket",
   "license": "MIT",
   "author": "Masafumi Sasahara <masafumi@sashara.io> (https://github.com/masafumi-sasahara/)",
@@ -17,8 +17,7 @@
     "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-bridge.js ./config"
   },
   "keywords": [
-    "where-bridge",
-    "where-client"
+    "where-bridge"
   ],
   "dependencies": {
     "@where-org/where-client": "^2.0.0",
